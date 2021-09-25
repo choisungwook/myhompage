@@ -1,20 +1,22 @@
 <template>
   <v-app>
-    <v-app-bar app color="white" primary dense>
+    <v-app-bar app color="white" flat>
       <v-spacer />
-      <v-toolbar-title>포트폴리오</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold">포트폴리오</v-toolbar-title>
 
       <v-spacer />
       <v-spacer />
 
       <v-btn v-for="menu in menus" :key="menu" :to="menu.route" text>
-        {{ menu.title }}
+        <div class="font-weight-bold">
+          {{ menu.title }}
+        </div>
       </v-btn>
 
       <v-spacer />
     </v-app-bar>
 
-    <v-main class="ma-10">
+    <v-main class="grey darken-4">
       <router-view />
     </v-main>
 
