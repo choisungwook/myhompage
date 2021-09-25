@@ -2,13 +2,13 @@
   <v-app>
     <v-app-bar app color="white" flat>
       <v-spacer />
-      <v-toolbar-title class="font-weight-bold">포트폴리오</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold headline">포트폴리오</v-toolbar-title>
 
       <v-spacer />
       <v-spacer />
 
       <v-btn v-for="menu in menus" :key="menu" :to="menu.route" text>
-        <div class="font-weight-bold">
+        <div class="font-weight-bold headline">
           {{ menu.title }}
         </div>
       </v-btn>
