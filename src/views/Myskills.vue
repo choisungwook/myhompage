@@ -84,6 +84,7 @@ export default {
       "가비아 관리",
       "Git",
       "Nginx",
+      "Nexus",
     ],
     development_items: ["Springboot", "JPA", "Flask", "Fastapi", "Redis"],
     etc_items: [
