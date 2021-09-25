@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myproject-school-frontend
+  namespace: __NAMESPACE__
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myproject-school-frontend
+  template:
+    metadata:
+      labels:
+        app: myproject-school-frontend
+    spec:
+      hostAliases:
+        - ip: "172.31.61.209"
+          hostnames:
+            - "jpaschool-backend.choicloudlab.com"
+      containers:
+        - name: myproject-school-frontend
+          image: __IMAGE_NAME__
+          resources:
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+            requests:
+              memory: "32Mi"
+              cpu: "50m"
+          ports:
+            - containerPort: 80
+          env:
+            - name: TZ
+              value: Asia/Seoul
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myproject-school-frontend
+  namespace: __NAMESPACE__
+spec:
+  selector:
+    app: myproject-school-frontend
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: __NODEPORT__
+  type: NodePort
