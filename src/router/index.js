@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/lazy/",
+    path: "/portfolio",
     name: "Home",
     component: DefaultLayout,
     children: [

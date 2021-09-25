@@ -1,36 +1,26 @@
 <template>
   <v-app>
-    <v-app-bar app primary dark>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Springboot Lazy project</v-toolbar-title>
-    </v-app-bar>
+    <v-app-bar app color="white" primary>
+      <v-toolbar-title>포트폴리오</v-toolbar-title>
 
-    <v-navigation-drawer app v-model="drawer">
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6"> 메뉴 </v-list-item-title>
-          <!-- <v-list-item-subtitle> subtext </v-list-item-subtitle> -->
-        </v-list-item-content>
-      </v-list-item>
+      <v-spacer />
 
-      <v-divider></v-divider>
-
-      <v-list dense nav>
-        <v-list-item v-for="menu in menus" :key="menu.title" link :to="menu.to">
-          <v-list-item-icon>
-            <v-icon>{{ menu.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ menu.title }}</v-list-item-title>
-          </v-list-item-content>
+      <v-list class="d-flex align-center">
+        <v-list-item
+          v-for="(menu, index) in menus"
+          :key="index"
+          :to="menu.route"
+          link
+        >
+          <v-list-item-title>{{ menu.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-app-bar>
 
     <v-main>
       <router-view />
     </v-main>
+
   </v-app>
 </template>
 
@@ -40,7 +30,14 @@ import { mapState } from "vuex";
 export default {
   name: "DefaultLayout",
 
-  data: () => ({}),
+  data: () => ({
+    menus: [
+      { title: "나의 소개", route: "/test" },
+      { title: "나의 스킬", route: "#" },
+      { title: "공부기록", route: "#" },
+      { title: "포트폴리오", route: "#" },
+    ],
+  }),
 
   computed: {
     ...mapState("menu", ["menus"]),
