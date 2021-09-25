@@ -89,6 +89,7 @@ export default {
     etc_items: [
       "자격증 - 정보처리기사, 정보보안기사, CKA",
       "인공지능 파이프라인",
+      "악성코드 분석",
     ],
     studying: [
       "Spring MVC",
