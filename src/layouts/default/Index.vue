@@ -31,9 +31,9 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "나의 소개", route: "/portfolio/introduce" },
-      { title: "나의 스킬", route: "/portfolio/myskills" },
-      { title: "공부기록", route: "/portfolio/study" },
+      { title: "나의 소개", route: "/introduce" },
+      { title: "나의 스킬", route: "/myskills" },
+      { title: "공부기록", route: "/study" },
       // { title: "포트폴리오", route: "/portfolio" },
     ],
   }),

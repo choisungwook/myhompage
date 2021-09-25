@@ -6,22 +6,22 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/portfolio",
+    path: "/",
     name: "Home",
     component: DefaultLayout,
     children: [
       {
-        path: "/portfolio/myskills",
+        path: "/myskills",
         name: "myskills",
         component: () => import("@/views/Myskills.vue"),
       },
       {
-        path: "/portfolio/introduce",
+        path: "/introduce",
         name: "introduce",
         component: () => import("@/views/Introduce.vue"),
       },
       {
-        path: "/portfolio/study",
+        path: "/study",
         name: "study",
         component: () => import("@/views/Study.vue"),
       },
@@ -31,7 +31,8 @@ const routes = [
 
 const router = new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
+  base: "/portfolio",
   routes,
 });
 
