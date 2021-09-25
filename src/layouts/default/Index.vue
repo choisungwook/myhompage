@@ -1,20 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app color="white" primary>
+    <v-app-bar app color="white" primary dense>
+      <v-spacer />
       <v-toolbar-title>포트폴리오</v-toolbar-title>
 
       <v-spacer />
+      <v-spacer />
 
-      <v-list class="d-flex align-center">
-        <v-list-item
-          v-for="(menu, index) in menus"
-          :key="index"
-          :to="menu.route"
-          link
-        >
-          <v-list-item-title>{{ menu.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
+      <v-btn v-for="menu in menus" :key="menu" :to="menu.route" text>
+        {{ menu.title }}
+      </v-btn>
+
+      <v-spacer />
     </v-app-bar>
 
     <v-main>
@@ -32,10 +29,10 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "나의 소개", route: "/test" },
-      { title: "나의 스킬", route: "#" },
-      { title: "공부기록", route: "#" },
-      { title: "포트폴리오", route: "#" },
+      { title: "나의 소개", route: "/portfolio/introduce" },
+      { title: "나의 스킬", route: "/portfolio/myskills" },
+      { title: "공부기록", route: "/portfolio/study" },
+      // { title: "포트폴리오", route: "/portfolio" },
     ],
   }),
 

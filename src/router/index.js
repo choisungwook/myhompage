@@ -11,32 +11,21 @@ const routes = [
     component: DefaultLayout,
     children: [
       {
-        path: "/lazy/school",
-        name: "school",
-        component: () => import("@/views/school/School.vue"),
+        path: "/portfolio/myskills",
+        name: "myskills",
+        component: () => import("@/views/Myskills.vue"),
       },
       {
-        path: "/lazy/classroom",
-        name: "classroom",
-        component: () => import("@/views/classroom/Classroom.vue"),
+        path: "/portfolio/introduce",
+        name: "introduce",
+        component: () => import("@/views/Introduce.vue"),
       },
       {
-        path: "/lazy/home",
-        name: "home",
-        component: () => import("@/views/Home.vue"),
-      },
-      {
-        path: "/lazy/helloworld",
-        name: "helloworld",
-        component: () =>
-          import(/* webpackChunkName: "about" */ "../views/Helloworld.vue"),
+        path: "/portfolio/study",
+        name: "study",
+        component: () => import("@/views/Study.vue"),
       },
     ],
-  },
-  {
-    path: "/test",
-    name: "test",
-    component: () => import("@/views/Test.vue"),
   },
 ];
 
