@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <div>This is Study</div>
+    <div class="white--text display-1">준비중..</div>
   </v-container>
 </template>
 
