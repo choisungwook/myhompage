@@ -14,7 +14,7 @@
       <v-spacer />
     </v-app-bar>
 
-    <v-main>
+    <v-main class="ma-10">
       <router-view />
     </v-main>
 
